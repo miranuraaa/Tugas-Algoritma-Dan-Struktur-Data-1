@@ -1,0 +1,162 @@
+//tugas 6 nomor 1
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main() {
+  char huruf[50];
+  int i;
+
+  cout << "Masukan kata : ";
+  cin.getline(huruf, 'i');
+
+  cout << "Panjang kata nya adalah : ";
+  cout << strlen(huruf);
+  getchar();
+}
+
+//tugas 6 nomor 2
+#include <cctype>
+#include <cstring>
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main() {
+  char kalimat[60] = "KAMPUS UNGU INSTITUT BISNIS DAN INFORMATIKA KESATUAN";
+  char kalimat_baru[60];
+  cout << kalimat << endl;
+  for (int i = 0; i < strlen(kalimat); i++) {
+    if (kalimat[i] >= 'a' && kalimat[i] <= 'z') {
+      kalimat_baru[i] = toupper(kalimat[i]);
+    } else {
+      kalimat_baru[i] = tolower(kalimat[i]);
+    }
+  }
+  cout << "\nHasil Perubahan = " << endl;
+  int x = strlen(kalimat_baru);
+  for (int i = x - 1; i >= 0; i--) {
+    cout << kalimat_baru[i];
+  }
+  return 0;
+}
+
+\\tugas 6 nomor 3
+#include <ctype.h>
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main() {
+  char a1[20], a2[20];
+
+  cout << "Masukan kata - 1 : ";
+  cin >> a1;
+  cout << "Masukan kata - 2 : ";
+  cin >> a2;
+
+  strcat(a1, a2);
+  cout << "Hasil nya menjadi : " << a1;
+  getchar();
+}
+
+//tugas 7 nomor 1
+/* ---------------------------- */
+/* Program Array Satu Dimensi */
+/* ---------------------------- */
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main() {
+  int i;
+  char nama[5][20];
+  float nilai1[5];
+  float nilai2[5];
+  float hasil[5];
+
+  for (i = 1; i <= 2; i++) {
+    cout << "Data Ke - " << i << endl;
+    cout << "Nama Siswa    : ";
+    cin >> nama[i];
+    cout << "Nilai MidTest : ";
+    cin >> nilai1[i];
+    cout << "Nilai Final   : ";
+    cin >> nilai2[i];
+    hasil[i] = (nilai1[i] * 0.40) + (nilai2[i] * 0.60);
+    cout << endl;
+  }
+  cout << "------------------------------------------";
+  cout << "-------" << endl;
+  cout << "No.Nama Siswa";
+  cout << "\t\t\t\tNilai \tNilai \tHasil" << endl;
+  cout << " \t\t\t\t\t\t\tMidTest Final \tUjian" << endl;
+  cout << "------------------------------------------";
+  cout << "-------" << endl;
+  for (i = 1; i <= 2; i++) {
+    cout << setiosflags(ios::left) << setw(4) << i;
+    cout << setiosflags(ios::left) << setw(20) << nama[i];
+    cout << setprecision(2) << "  \t" << nilai1[i];
+    cout << setprecision(2) << "\t\t" << nilai2[i];
+    cout << setprecision(2) << "\t\t" << hasil[i] << endl;
+  }
+  cout << "------------------------------------------";
+  cout << "-------" << endl;
+  getchar();
+}
+
+//tugas 7 nomor 2
+#include <iostream>
+using namespace std;
+
+int main() {
+  int nilai[10], i, bil, jumlah = 0;
+  cout << "Masukkan Banyaknya Bilangan = ";
+  cin >> i;
+  cout << endl;
+  for (int a = 0; a < i; a++) {
+    cout << "Masukkan Indeks ke-" << a << " = ";
+    cin >> nilai[a];
+  }
+  cout << endl << endl;
+  cout << "Deretan Bilangan = ";
+  for (int b = 0; b < i; b++) {
+    cout << nilai[b] << " ";
+  }
+  cout << endl;
+  cout << "\nMasukkan Bilangan yang akan dicari = ";
+  cin >> bil;
+  for (int c = 0; c < 10; c++) {
+    if (nilai[c] == bil) {
+      jumlah++;
+      cout << "Bilangan " << bil << " ditemukan sebanyak " << jumlah
+           << "\npada posisi ke = " << c;
+      break;
+    } else if (bil != 1 && bil != 4 && bil != 5 && bil != 6 && bil != 3) {
+      cout << "Bilangan tidak ditemukan ";
+      break;
+    }
+  }
+  return 0;
+}
+
+//tugas 7 nomor 3
+#include <iostream>
+using namespace std;
+
+int main() {
+  int nilai[10] = {23, 6, 89, 12, 45, 67, 9, 90, 54, 30};
+  int max, min;
+  max = nilai[0];
+  min = nilai[0];
+  for (int a = 0; a < 10; a++) {
+    if (nilai[a] > max) {
+      max = nilai[a];
+    }
+    if (nilai[a] < min) {
+      min = nilai[a];
+    }
+  }
+  cout << "\nNilai terbesar adalah : " << max << endl;
+  cout << "Nilai terkecil adalah : " << min << endl;
+  return 0;
+}
