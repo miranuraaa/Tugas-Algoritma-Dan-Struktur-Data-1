@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+int pangkat(int bil, int a)
+{
+ if (a==1)
+ {
+  return bil;
+ }
+ else if (a==0)
+ {
+  return 1;
+ }
+ else
+ {
+  return bil*pangkat(bil,a-1);
+ }
+}
+
+int main()
+{
+ int x,y;
+ cout<<" masukan bilangan X = ";
+ cin>>x;
+ cout<<" masukan bilangan Y = ";
+ cin>>y;
+ cout<<endl;
+ cout<<" "<<x<<" Dipangkatkan "<<y<<" = "<<pangkat(x,y)<<endl;
+
+return 0;
+
+}
