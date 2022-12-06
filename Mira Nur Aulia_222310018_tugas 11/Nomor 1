@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+  int x,*bilangan;
+  bilangan=&x;
+  *bilangan=200;
+
+  cout<<*bilangan<<" ";
+  (*bilangan)++;
+  cout<<*bilangan<<" ";
+  (*bilangan)--;
+  cout<<*bilangan<<"\n";
+
+  getchar();
+}
