@@ -1,0 +1,14 @@
+1. #include <iostream>
+2.
+3. using namespace std;
+4.
+5. int main (){ 
+6. int *P; // merupakan pendeklarasian pointer p yang menunjuk ke tipe data integer
+7. P=new int; // merupakan pengalokasian memori
+8.
+9. *P=100; // merupakan memori yang telah di alokasikan
+10.
+11. cout<<"Nilai *P : "<<*P<<endl; // merupakan perintah untuk mencetak pointer p
+12. delete P; // merupakan pelepasan memori
+13. return 0;
+14. }
