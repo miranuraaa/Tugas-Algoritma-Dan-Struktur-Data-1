@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class node{
+  public:
+  string kata;
+  node* next;
+  };
+
+int main(){
+  node* head;
+  node* kata1=NULL;
+  node* kata2=NULL;
+  node* kata3=NULL;
+
+  kata1 = new node();
+  kata2 = new node();
+  kata3 = new node();
+
+  cout<<"Nama Saya ";
+  kata1 -> kata ="Mira";
+  kata2 -> kata = " Nur";
+  kata3 -> kata =" Aulia";
+
+  kata1 -> next = kata2;
+  kata2 -> next = kata3;
+  kata3 -> next = NULL;
+
+  head = kata1;
+  while(head != NULL){
+    cout<<head->kata;
+    head = head->next;
+  }
+}
