@@ -1,0 +1,67 @@
+1. #include<iostream>
+2. #define maxstack 7 //menginisialisasikan maximal stack nya 7
+3. using namespace std;
+4.
+5. struct STACK{ 
+6. int s[7]; 
+7. int top; 
+8. };
+9. struct STACK st; 
+10. void push(int data){
+11. if(st.top==maxstack){
+12. cout<<"data penuh"<<endl;
+13. }else{
+14. st.top = st.top +1;
+15. st.s[st.top] = data;
+16. cout<<"data ditambahkan"<<endl;
+17. }
+18.
+19. }
+20. void pop(){
+21. if(st.top==-1){
+22. cout<<"data kosong"<<endl;
+23. }else{
+24. st.top = st.top-1;
+25. cout<<"data dihapus"<<endl;
+26. }
+27.
+28. }
+29.
+30. void show(){
+31. if(st.top==-1){
+32. cout<<"data kosong, tidak ada yang bisa ditampilkan";
+33. }else{
+34. for(int x=0;x<=st.top;x++){
+35. cout<<st.s[x]<<"=>";
+36. }
+37. cout<<endl;
+38. }
+39. }
+40. int main(){
+41. st.top = -1;
+42. push(1);
+43. push(2);
+44. push(3);
+45. push(4);
+46. push(5);
+47. push(6);
+48. push(7);
+49. pop();
+50. show();
+51. }
+
+analisis
+Line 5-9 : membuat struct untuk menampung data yang akan dimasukan oleh user, ada 2 data di dalam struct tersebut, 
+yaitu s[] sebagai penyimpanan data dan top sebagai parameter pencarian data teratas.
+
+Line 10-19 : disini adalah algoritma untuk proses push dimana kita memerlukan parameter data yang merupakan data yang ingin dimasukan ke dalam stack. 
+pertama tama kita akan mengecek apakah stack sudah penuh, jika belum maka kita akan menambahkan data tersebut array s di index ke top+1.
+
+Line 20-28 : disini adalah algoritma untuk proses pop dimana jika top bukan sama dengan -1 (stack kosong) maka kita akan melakukan operasi matematika top -1. 
+kita tidak perlu menghapus isi data di dalam array karena data tersebut bisa langsung ditimpa dengan data baru.
+
+Line 30-39 : ini adalah fungsi untuk menampilkan data, pertama kita akan mengecek apakah top bukan sama dengan -1(stack kosong) 
+jika iya maka kita akan melakukan print data dari array index ke 0 hingga array index ke top (batas atas stack).
+
+Line 40-51 : ini adalah fungsi main dimana kita hanya perlu mendeklarasikan top = -1 
+kemudian memanggil fungsi top untuk menambahkan data dan pop untuk mengurangi data, jika sudah maka kita bisa menampilkan stack tersebut dengan fungsi show.
